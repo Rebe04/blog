@@ -2,6 +2,9 @@
 @section('title', 'Admin Esteban Benitez')
 
 @section('content_header')
+    @can('admin.tags.create')
+        <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.tags.create')}}">Crear Etiqueta</a>   
+    @endcan
     <h1>Etiquetas</h1>
 @stop
 
@@ -12,9 +15,6 @@
     </div>
 @endif
     <div class="card">
-        <div class="card-header">
-            <a class="btn btn-secondary" href="{{route('admin.tags.create')}}">Crear Etiqueta</a>
-        </div>
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -30,14 +30,18 @@
                             <td> {{$tag->id}} </td>
                             <td> {{$tag->name}} </td>
                             <td width="10px">
-                                <a class="btn btn-primary btn-sm" href="{{route('admin.tags.edit', $tag)}}">Editar</a>
+                                @can('admin.tags.edit')
+                                    <a class="btn btn-primary btn-sm" href="{{route('admin.tags.edit', $tag)}}">Editar</a>
+                                @endcan
                             </td>
                             <td width="10px">
-                                <form action="{{route('admin.tags.destroy', $tag)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
-                                </form>
+                                @can('admin.tags.destroy')
+                                    <form action="{{route('admin.tags.destroy', $tag)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

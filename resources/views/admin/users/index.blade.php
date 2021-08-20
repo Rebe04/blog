@@ -2,11 +2,16 @@
 @section('title', 'Admin Esteban Benitez')
 
 @section('content_header')
-    <h1>Detalles de Categoría</h1>
+    <h1>Usuarios</h1>
 @stop
 
 @section('content')
-    <p>Bienvenido al panel de administración de Esteban Benitez</p>
+    @if (session('info'))
+        <div class="alert alert-success">
+            <strong>{{session('info')}}</strong>
+        </div>
+    @endif
+    @livewire('admin.users-index')
 @stop
 
 @section('css')

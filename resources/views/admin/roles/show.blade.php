@@ -2,7 +2,7 @@
 @section('title', 'Admin Esteban Benitez')
 
 @section('content_header')
-    <h1>Etiqueta</h1>
+    <h1>Mostrar Role</h1>
 @stop
 
 @section('content')

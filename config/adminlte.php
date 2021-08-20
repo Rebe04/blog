@@ -239,37 +239,53 @@ return [
         // Sidebar items:
         [
             'text' => 'blog',
-            'route'  => 'admin.home',
+            'route'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin',
+            'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can'  => 'admin.home',
         ],
-        ['header' => 'ADMINISTRADOR'],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
+            'can'  => 'admin.users.index',
+        ],
+        [
+            'text'        => 'Gestion de roles',
+            'route'         => 'admin.roles.index',
+            'icon'        => 'fas fa-user-cog fa-fw',
+            // 'can'  => 'admin.users.index',
+        ],
         [
             'text' => 'Categorías',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
             'active' => ['admin/categories*'],
+            'can'  => 'admin.categories.index',
         ],
         [
             'text' => 'Etiquetas',
             'route'  => 'admin.tags.index',
             'icon' => 'far fa-fw fa-bookmark',
             'active' => ['admin/tags*'],
+            'can'  => 'admin.tags.index',
         ],
         ['header' => 'OPCIONES DE BLOG'],
         [
             'text'       => 'Lista de posts',
             'route'        => 'admin.posts.index',
             'icon'   => 'fas fa-fw fa-clipboard',
+            'can'  => 'admin.posts.index',
         ],
         [
             'text'       => 'Crear nuevo posts',
             'route'        => 'admin.posts.create',
             'icon'   => 'fas fa-fw fa-file',
+            'can'  => 'admin.posts.create',
         ],
     ],
 
