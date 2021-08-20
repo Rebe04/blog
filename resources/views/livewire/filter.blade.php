@@ -5,7 +5,7 @@
             <hr><br>
                 <div class="space-x-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                     @foreach ($categories as $category)
-                        <a href="{{route('post.category', $category)}}" class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md cursor-pointer">{{$category->name}}</a>
+                        <a href="{{route('post.category', $category)}}" class="text-gray-700 text-center border-b border-gray-200 hover:bg-gray-700 hover:border-gray-700 hover:text-white px-3 py-2 rounded-md cursor-pointer">{{$category->name}}</a>
                     @endforeach
                 </div>
         </div>
