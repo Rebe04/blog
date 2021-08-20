@@ -19,7 +19,7 @@ class PostController extends Controller
         }
 
         if (Cache::has($key)) {
-            $post = Cache::get($key);
+            $posts = Cache::get($key);
         } else {
             $posts = Post::where('status', 2)->latest('id')->paginate(8);
             Cache::put($key, $posts);

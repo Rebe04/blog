@@ -16,10 +16,10 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('can:admin.post.index')->only('index');
-        $this->middleware('can:admin.post.create')->only('create', 'store');
-        $this->middleware('can:admin.post.edit')->only('edit', 'update');
-        $this->middleware('can:admin.post.destroy')->only('destroy');
+        $this->middleware('can:admin.posts.index')->only('index');
+        $this->middleware('can:admin.posts.create')->only('create', 'store');
+        $this->middleware('can:admin.posts.edit')->only('edit', 'update');
+        $this->middleware('can:admin.posts.destroy')->only('destroy');
     }
 
 
